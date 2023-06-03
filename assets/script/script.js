@@ -2,8 +2,6 @@
 const task = document.getElementById("addtask");
 const taskList = document.getElementById("list");
 
-let tasks = [];
-
 function addTask() {
     if(task.value ==="") {
         alert("Theres nothing there bro...");
@@ -14,12 +12,13 @@ function addTask() {
         taskList.appendChild(li);
         let span = document.createElement('span');
         span.innerHTML = "\u00d7";
+        li.appendChild(span)
     }
-    task.value="";
+    task.value='';
     saveData();
 }
 
-listContainer.addEventListener('click', function(e){
+taskList.addEventListener('click', (e) => {
     if(e.target.tagName === "LI"){
         e.target.classList.toggle('checked');
         saveData();
@@ -29,10 +28,12 @@ listContainer.addEventListener('click', function(e){
         saveData();
     }
 }, false);
+
 function saveData(){
-    localStorage.setItem('data', listContainer.innerHTML);
+    localStorage.setItem('data', taskList.innerHTML);
 }
+
 function showTask(){
-    listContainer.innerHTML = localStorage.getItem('data');
+    taskList.innerHTML = localStorage.getItem('data');
 }
 showTask();
