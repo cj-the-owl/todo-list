@@ -14,6 +14,7 @@ body {
     width: 40rem;
     margin-left: 450px;
     margin-top: 30px;
+    background-color: rgb(71, 71, 71);
     
 }
 
@@ -96,3 +97,47 @@ ul li span:hover{
     color: black;
 }
 
+@media screen and (max-width: 400px) {
+    body {
+        text-align: center;
+    }
+    .container {
+        margin-left: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 630px;
+        
+    }
+
+    h1 {
+        font-size: 25px;
+        padding: 5px;
+        margin-top: 40px;
+    }
+
+    .screen {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+    }
+
+    input {
+        height:30px;
+        width: 150px;
+        font-size: 15px;
+    }
+
+    .b1, .b2 {
+        width: 70px;
+        height: 35px;
+    } 
+
+    #list {
+        width: 250px;
+    }
+
+}
+
+    
